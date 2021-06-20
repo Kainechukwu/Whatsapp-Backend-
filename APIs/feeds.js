@@ -10,15 +10,19 @@ const users = [{
     phone: "123456789",
     name: "kaine"
 },
-{
+{ 
     phone: "987654321",
     name: "Ebi"
+},
+{
+    phone: "9",
+    name: "kaine"
 }
 ]
 
 router.route("/")
 .get(authenticateToken, function (req, res) {
-    res.json(users.filter(user => user.name === req.user.name))
+    res.json(users.filter(user => user.phone === req.user.contactNumber))
     // console.log("hello")
     // res.send("hello");
 });
@@ -36,9 +40,9 @@ function authenticateToken(req, res, next){
             res.sendStatus(403)//invalid web token
         }
         req.user = user;
-        req.token = token;
+        // req.token = token;
 
-        console.log(req.token)
+        // console.log(req.token)
         next();
     });
 }

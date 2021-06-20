@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: [true, "Please specify first name"],
-        trim: true
-    },
-    lastName: {
-        type: String,
-        required: [true, "Please specify last name"],
-        trim: true
-    },
+    // firstName: {
+    //     type: String,
+    //     required: [true, "Please specify first name"],
+    //     trim: true
+    // },
+    // lastName: {
+    //     type: String,
+    //     required: [true, "Please specify last name"],
+    //     trim: true
+    // },
     username: {
         type: String,
-        required: [true, "Please specify username"],
+        // required: [true, "Please specify username"],
         trim: true
     },
     contactNumber: {
@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
      userType: String//basic or Admin user
     ,
 
-    profileImage: String
+    profileImage: String,
+    userTokens: [String]
 
 }
     , { timestamps: { createdAt: 'created_at' } }
