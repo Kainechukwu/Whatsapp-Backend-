@@ -2,8 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
-const signupAPI = require("./APIs/signup");
+// const signupAPI = require("./APIs/signup");
 const feedsAPI = require("./APIs/feeds")
+const newChatAPI = require("./APIs/newChat")
 
 mongoose.connect("mongodb://localhost:27017/WhatsappDB",
     {
@@ -22,6 +23,7 @@ app.use(express.json());
 
 // app.use("/signup", signupAPI);
 app.use("/feeds", feedsAPI);
+app.use("/newChat", newChatAPI);
 
 
 

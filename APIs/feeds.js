@@ -25,7 +25,10 @@ router.route("/")
     res.json(users.filter(user => user.phone === req.user.contactNumber))
     // console.log("hello")
     // res.send("hello");
-});
+})
+
+// .post()
+;
 
 
 function authenticateToken(req, res, next){
